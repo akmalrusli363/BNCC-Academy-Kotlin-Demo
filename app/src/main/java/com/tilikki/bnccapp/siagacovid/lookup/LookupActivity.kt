@@ -5,18 +5,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.widget.addTextChangedListener
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.tilikki.bnccapp.R
-import com.tilikki.bnccapp.siagacovid.utils.AppEventLogging
+import com.tilikki.bnccapp.siagacovid.lookup.mvvm.LookupViewModel
 import kotlinx.android.synthetic.main.activity_lookup.*
-import okhttp3.*
-import org.json.JSONArray
-import java.io.IOException
 
 class LookupActivity : AppCompatActivity() {
-    private val okHttpClient = OkHttpClient()
 
-    companion object {
-        const val lookupDataApiURL = "https://api.kawalcorona.com/indonesia/provinsi/"
-    }
+    private val viewModel: LookupViewModel = LookupViewModel(this@LookupActivity)
 
     private var mockLookupList: MutableList<LookupData> = mutableListOf(
         LookupData("Loading...", 0, 0, 0)
@@ -50,45 +44,7 @@ class LookupActivity : AppCompatActivity() {
     }
 
     private fun fetchData(lookupAdapter: LookupAdapter) {
-        val request: Request = Request.Builder().url(lookupDataApiURL).build()
-
-        okHttpClient.newCall(request).enqueue(getCallback(lookupAdapter))
+        viewModel.fetchData(lookupAdapter)
     }
 
-    private fun getCallback(lookupAdapter: LookupAdapter): Callback {
-        return object : Callback {
-            override fun onFailure(call: Call, e: IOException) {
-                AppEventLogging(this@LookupActivity).logExceptionOnToast(e)
-                srlLookupData.isRefreshing = false
-            }
-
-            override fun onResponse(call: Call, response: Response) {
-                try {
-                    val jsonString = response.body?.string()
-                    val jsonArray = JSONArray(jsonString)
-                    val lookupDataFromNetwork = mutableListOf<LookupData>()
-
-                    for (i in 0 until jsonArray.length()) {
-                        val attribute = jsonArray.getJSONObject(i).getJSONObject("attributes")
-                        lookupDataFromNetwork.add(
-                            LookupData(
-                                provinceID = attribute.getInt("Kode_Provi"),
-                                provinceName = attribute.getString("Provinsi"),
-                                numOfPositiveCase = attribute.getInt("Kasus_Posi"),
-                                numOfRecoveredCase = attribute.getInt("Kasus_Semb"),
-                                numOfDeathCase = attribute.getInt("Kasus_Meni")
-                            )
-                        )
-                    }
-
-                    this@LookupActivity.runOnUiThread {
-                        lookupAdapter.updateData(lookupDataFromNetwork)
-                        srlLookupData.isRefreshing = false
-                    }
-                } catch (e: Exception) {
-                    AppEventLogging(this@LookupActivity).logExceptionOnToast(e)
-                }
-            }
-        }
-    }
 }
