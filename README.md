@@ -1,7 +1,10 @@
 # BNCC-Academy-Kotlin-Demo
 
-A repository for an app made during BNCC x Gojek Academy demonstrated using Kotlin, which shows data about COVID-19 statistics in Indonesia
+> Alias **BNCC Siaga COVID-19** or simplified as **Siaga COVID-19**
 
+![BNCC Siaga Project Banner](project-banner.png)
+
+A repository for an app made during BNCC x Gojek Academy demonstrated using Kotlin, which shows data about COVID-19 statistics in Indonesia.
 
 ## Parts & Features
 
