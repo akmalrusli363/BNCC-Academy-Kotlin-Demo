@@ -11,7 +11,9 @@
 
 A repository for an app made during BNCC x Gojek Academy demonstrated using Kotlin, which shows data about COVID-19 statistics in Indonesia.
 
-> **INFO:** This branch is **different** from `master` branch because this branch serves data from [data.covid19.go.id](https://data.covid19.go.id) in which serves daily cases for national and regional cases, and served officially from government supported (Satgas COVID-19) committee.
+> **NOTE:** The `jetpack` branch is a group of branches where the app developed under Android Jetpack in help to follow best practices, reduces boilerplate, clean and better maintainability of codes. This includes applied MVVM Architecture and usage of Retrofit, Moshi, and ReactiveX instead of plain OkHttp call and manual JSON parsing in parsing API network calls.
+
+> **INFO:** This branch contains **beyond statistical data** provided for COVID-19 statistics, especially for world data and additional COVID-19 statistics in Indonesia which contains more detailed data (rates in percentage, specimens, and historical data) which divided into parts of experimental branches and may added or removed in that branch before applied into advanced version of BNCC Siaga COVID19 App.
 
 ## Parts & Features
 
@@ -40,7 +42,7 @@ This feature will show a list of phone number that you can reach out if you are 
 
 This feature will show the number of coronavirus cases around Indonesia. You can search for your region for total cases, recovered cases, and death cases in your region (for example: DKI Jakarta, South Sulawesi, West Java, Bali, etc).
 
-Also in latest version of `dev/public_api`, you can sort for total cases, recovered cases, death cases, and their daily cases too. 
+Also, you can sort for total cases, recovered cases, death cases, and their daily cases too. 
 
 
 ## The COVID-19 API URL
