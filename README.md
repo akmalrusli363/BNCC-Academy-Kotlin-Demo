@@ -4,6 +4,11 @@
 
 ![BNCC Siaga Project Banner](project-banner.png)
 
+> [!NOTE]
+> This project has been **archived** due to most COVID-19 API services/data sources are not longer available.
+>
+> Also, this project is now an Android project to demonstrate statistical data for portfolio purpose, whlist the data sources is not longer available for now.
+
 A repository for an app made during BNCC x Gojek Academy demonstrated using Kotlin, which shows data about COVID-19 statistics in Indonesia.
 
 > **NOTE:** The `jetpack` branch is a group of branches where the app developed under Android Jetpack in help to follow best practices, reduces boilerplate, clean and better maintainability of codes. This includes applied MVVM Architecture and usage of Retrofit, Moshi, and ReactiveX instead of plain OkHttp call and manual JSON parsing in parsing API network calls.
@@ -37,7 +42,7 @@ This feature will show a list of phone number that you can reach out if you are 
 
 This feature will show the number of coronavirus cases around Indonesia. You can search for your region for total cases, recovered cases, and death cases in your region (for example: DKI Jakarta, South Sulawesi, West Java, Bali, etc).
 
-In [`dev/public_api-sorting`](https://github.com/akmalrusli363/BNCC-Academy-Kotlin-Demo/tree/dev/public_api-sorting), you can sort for total cases, recovered cases, death cases, and their daily cases too.
+Also, you can sort for total cases, recovered cases, death cases, and their daily cases too. 
 
 ### World Statistics (`develop` & `experiments` branch only!)
 This feature shows the number of coronavirus cases around the world. Each country has confirmed cases, active cases in percentage, recovery, and death cases (in counts and percentages). Not all data from the country may be accurate served because some countries may not served some data parts (such as recovery counts) due of data confidentiality in that country.
@@ -46,18 +51,22 @@ User can search countries using search box in world stat page and sort the count
 
 
 ## The COVID-19 API URL
+
+> [!NOTE]
+> The COVID-19 API URLs are not longer available.
+
 This application uses COVID-19 data API supplied from [data.covid19.go.id](https://data.covid19.go.id) which fetches data for Case Overview and Regional Lookup features. For emergency call and phone number for regional emergency services, we uses BNCC Corona's Firebase API Services provided at [bncc-corona-versus.firebaseio.com/v1/hotlines.json](https://bncc-corona-versus.firebaseio.com/v1/hotlines.json).
 
 Summarily, the list of API we've provided for this app:
 
-| Feature | Data APIs URL | Branch |
+| Feature | Data API's URL | Branch |
 | --- | --- | :---: |
-| National Data Overview | https://api.kawalcorona.com/indonesia/ | `master` |
-|  | https://data.covid19.go.id/public/api/update.json | `dev/public_api`, `develop` |
-| Regional Data Overview | https://api.kawalcorona.com/indonesia/provinsi | `master` |
-|  | https://data.covid19.go.id/public/api/prov.json | `dev/public_api`, `develop` |
-| Hotline | https://bncc-corona-versus.firebaseio.com/v1/hotlines.json | any |
-| World Statistics (summary + countries) | https://api.covid19api.com/summary | `develop` |
+| National Data Overview | ~~https://api.kawalcorona.com/indonesia/~~ | `master` |
+|  | ~~https://data.covid19.go.id/public/api/update.json~~ | `dev/public_api` |
+| Regional Data Overview | ~~https://api.kawalcorona.com/indonesia/provinsi~~ | `master` |
+|  | ~~https://data.covid19.go.id/public/api/prov.json~~ | `dev/public_api` |
+| Hotline | ~~https://bncc-corona-versus.firebaseio.com/v1/hotlines.json~~ | any |
+| World Statistics (summary + countries) | ~~https://api.covid19api.com/summary~~ | `develop` |
 
 
 ## Image/Asset Credits
