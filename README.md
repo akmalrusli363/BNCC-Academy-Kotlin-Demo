@@ -40,7 +40,7 @@ This feature will show a list of phone number that you can reach out if you are 
 
 This feature will show the number of coronavirus cases around Indonesia. You can search for your region for total cases, recovered cases, and death cases in your region (for example: DKI Jakarta, South Sulawesi, West Java, Bali, etc).
 
-In [`dev/public_api-sorting`](https://github.com/akmalrusli363/BNCC-Academy-Kotlin-Demo/tree/dev/public_api-sorting), you can sort for total cases, recovered cases, death cases, and their daily cases too. 
+Also in latest version of `dev/public_api`, you can sort for total cases, recovered cases, death cases, and their daily cases too. 
 
 
 ## The COVID-19 API URL
